@@ -14,18 +14,18 @@ class GameSceneActiveState: GameSceneState {
 	
 	override func didEnter(from previousState: GKState?) {
 		scene.isPaused = false
-		scene.waveManager.currentWave = 0
+//		scene.waveManager.currentWave = 0
 		showLevelSelector(false)
 		scene.createGrid()
-		scene.createOptionGrid()
+//		scene.createOptionGrid()
 		scene.initializeGrid()
-		scene.createHUDGrid()
-		scene.addHudStuff()
+//		scene.createHUDGrid()
+//		scene.addHudStuff()
 		scene.loadLevelMap(levelToLoad)
 		
 		scene.loadTowerSelectorNodes()
 		
-		scene.startFirstWave()
+//		scene.startFirstWave()
 	}
 	
 	override func isValidNextState(_ stateClass: AnyClass) -> Bool {

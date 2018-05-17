@@ -40,25 +40,25 @@ class TowerSelectorNode: SKNode {
 		hideAction = showAction.reversed()
 	}
 	
-	func setTowerSell(_ towerTypeToSell: TowerType, towerType: TowerType, pointForSelection: CGPoint) {
-		towerIcon.texture = SKTexture(imageNamed: towerType.rawValue)
-		towerIcon.name = "Tower_Icon_\(towerType.rawValue)"
-		
-		if towerTypeToSell == towerType {
-			costLabel.text = "\(towerType.sellPrice)"
-		} else {
-			let costAfterSell = towerType.cost - towerTypeToSell.sellPrice
-			if costAfterSell >= 0 {
-				costLabel.text = "\(costAfterSell)"
-			} else {
-				costLabel.text = "+\(abs(costAfterSell))"
-			}
-		}
-		let moveAction = SKAction.moveBy(x: pointForSelection.x, y: pointForSelection.y, duration: 0.2)
-		
-		showAction = SKAction.group([moveAction])
-		hideAction = showAction.reversed()
-	}
+//	func setTowerSell(_ towerTypeToSell: TowerType, towerType: TowerType, pointForSelection: CGPoint) {
+//		towerIcon.texture = SKTexture(imageNamed: towerType.rawValue)
+//		towerIcon.name = "Tower_Icon_\(towerType.rawValue)"
+//
+//		if towerTypeToSell == towerType {
+//			costLabel.text = "\(towerType.sellPrice)"
+//		} else {
+//			let costAfterSell = towerType.cost - towerTypeToSell.sellPrice
+//			if costAfterSell >= 0 {
+//				costLabel.text = "\(costAfterSell)"
+//			} else {
+//				costLabel.text = "+\(abs(costAfterSell))"
+//			}
+//		}
+//		let moveAction = SKAction.moveBy(x: pointForSelection.x, y: pointForSelection.y, duration: 0.2)
+//
+//		showAction = SKAction.group([moveAction])
+//		hideAction = showAction.reversed()
+//	}
 	
 	func show() {
 		self.run(showAction)
